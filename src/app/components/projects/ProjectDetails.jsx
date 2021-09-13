@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router'
 
-const ProjectDetails = () => {
+const ProjectDetails = ({ project }) => {
 
     const slugId = useParams();
     console.log(slugId);
@@ -10,9 +10,9 @@ const ProjectDetails = () => {
             <div className="card z-depth-0">
                 <div className="card-content">
                     <div className="card-title">
-                        Project Title
+                        {project.title}
                     </div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum eligendi sunt facilis sequi. Nam sit animi enim pariatur dolor labore nihil nesciunt ut vero odit. Nulla consequatur modi tenetur ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque laborum esse nostrum hic impedit unde veniam doloremque, asperiores doloribus nesciunt earum iusto labore quod vel dicta qui alias omnis. Voluptas.</p>
+                    <p>{project.content}</p>
                 </div>
                 <div className="card-action grey lighten-4 grey-text">
                     <div>Posted by XAe-12</div>
