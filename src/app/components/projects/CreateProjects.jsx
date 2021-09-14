@@ -1,18 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { ReactReduxContext } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { createProject } from '../../../store/actions/projectActions'
 
 const CreateProject = () => {
     const [state, setState] = useState({
         title: '',
         content: ''
     })
-
     const handleChange = (e) => {
         state[e.target.id] = e.target.value;
         setState(state)
     }
+    const {store} = useContext(ReactReduxContext);
+    const createProjectSub = (project) => {
+        store.dispatch(createProject(project));
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(state);
+        // console.log(state);
+        createProjectSub(state)
     }
     return (
         <div className="container">
