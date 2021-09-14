@@ -1,12 +1,12 @@
 import React from 'react'
 import { useContext } from 'react'
-import { ReactReduxContext, useSelector } from 'react-redux'
+import { ReactReduxContext } from 'react-redux'
+import { useSelector } from 'react-redux'
 import ProjectList from '../projects/ProjectList'
 import Notifactions from './Notifactions'
 
 const Dashboard = () => {
-    const { store } = useContext(ReactReduxContext)
-
+    const { store } = useContext(ReactReduxContext);
     const projects = useSelector(state => { if (state) return state.project });
     console.log(store)
 
